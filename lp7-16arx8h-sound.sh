@@ -3,7 +3,7 @@
 # Check for root
 [ "$(id -u)" -ne 0 ] && { echo "Requires root privileges."; exit 1; }
 
-# Create tas2781-fix script
+# Create tas2781 fix script
 mkdir -p /usr/local/bin
 cat > /usr/local/bin/tas2781-fix << 'EOF'
 #!/bin/sh
