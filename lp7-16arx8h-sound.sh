@@ -28,7 +28,7 @@ printf "on" > "$POWER_CONTROL_PATH"
 EOF
 
 chmod +x /usr/local/bin/tas2781-fix
-echo "Created tas2781 fix script: /usr/local/bin/tas2781-fix"
+echo "Created tas2781 fix script /usr/local/bin/tas2781-fix"
 
 # Create systemd service
 cat > /etc/systemd/system/tas2781-fix.service << 'EOF'
@@ -46,14 +46,14 @@ WantedBy=multi-user.target
 EOF
 
 systemctl enable tas2781-fix.service
-echo "Enabled systemd service: /etc/systemd/system/tas2781-fix.service"
+echo "Enabled systemd service /etc/systemd/system/tas2781-fix.service"
 
 # Create modprobe configuration
 mkdir -p /etc/modprobe.d
 cat > /etc/modprobe.d/60-hda.conf << 'EOF'
 options snd-hda-intel model=,17aa:38a8
 EOF
-echo "Applied modprobe configuration: /etc/modprobe.d/60-hda.conf"
+echo "Applied modprobe configuration /etc/modprobe.d/60-hda.conf"
 
 # Reboot when ready
 echo "Setup complete. Reboot required."
